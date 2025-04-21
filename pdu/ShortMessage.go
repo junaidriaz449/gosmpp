@@ -17,6 +17,7 @@ type ShortMessage struct {
 	udHeader          UDH
 	messageData       []byte
 	withoutDataCoding bool // purpose of ReplaceSM usage
+	isFlash           bool
 }
 
 // NewShortMessage returns new ShortMessage.
@@ -78,6 +79,12 @@ func (c *ShortMessage) SetMessageWithEncoding(message string, enc data.Encoding)
 			}
 		}
 	}
+	return
+}
+
+// SetIsFlashMessage sets IsFlash parameter in message
+func (c *ShortMessage) SetIsFlashMessage(isFlash bool) {
+	c.isFlash = isFlash
 	return
 }
 
@@ -210,6 +217,12 @@ func (c *ShortMessage) Marshal(b *ByteBuffer) {
 		coding = data.GSM7BITCoding
 	} else {
 		coding = c.enc.DataCoding()
+	}
+
+	if c.isFlash == true && coding == data.GSM7BITCoding {
+		coding = data.GSM7BITCodingFlash
+	} else if c.isFlash == true && coding == data.UCS2Coding {
+		coding = data.UCS2CodingFlash
 	}
 
 	// data_coding

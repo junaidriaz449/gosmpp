@@ -9,6 +9,8 @@ import (
 const (
 	// GSM7BITCoding is gsm-7bit coding
 	GSM7BITCoding byte = 0x00
+	// GSM7BITCodingFlash is gsm-7bit coding with flash sms
+	GSM7BITCodingFlash byte = 0x10
 	// ASCIICoding is ascii coding
 	ASCIICoding byte = 0x01
 	// BINARY8BIT1Coding is 8-bit binary coding
@@ -23,6 +25,8 @@ const (
 	HEBREWCoding byte = 0x07
 	// UCS2Coding is UCS2 coding
 	UCS2Coding byte = 0x08
+	// UCS2CodingFlash is UCS2 coding with flash sms
+	UCS2CodingFlash byte = 0x18
 )
 
 // EncDec wraps encoder and decoder interface.
