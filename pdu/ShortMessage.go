@@ -221,8 +221,6 @@ func (c *ShortMessage) Marshal(b *ByteBuffer) {
 
 	if c.isFlash == true && coding == data.GSM7BITCoding {
 		coding = data.GSM7BITCodingFlash
-	} else if c.isFlash == true && coding == data.UCS2Coding {
-		coding = data.UCS2CodingFlash
 	}
 
 	// data_coding

@@ -10,7 +10,7 @@ const (
 	// GSM7BITCoding is gsm-7bit coding
 	GSM7BITCoding byte = 0x00
 	// GSM7BITCodingFlash is gsm-7bit coding with flash sms
-	GSM7BITCodingFlash byte = 0x10
+	GSM7BITCodingFlash byte = 0xF0
 	// ASCIICoding is ascii coding
 	ASCIICoding byte = 0x01
 	// BINARY8BIT1Coding is 8-bit binary coding
